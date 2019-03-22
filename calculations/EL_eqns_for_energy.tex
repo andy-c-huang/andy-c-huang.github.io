@@ -1,0 +1,43 @@
+%\documentclass[12pt]{article}
+\documentclass{article}
+
+\renewcommand{\baselinestretch}{1.3}
+
+\usepackage{tikz, amsmath, amsthm, amssymb, mathrsfs, fullpage, setspace, cancel}
+%\usetikzlibrary{matrix,arrows}
+
+\newcommand{\N}[0]{\mathbb{N}} \newcommand{\Z}[0]{\mathbb{Z}} \newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\R}[0]{\mathbb{R}} \newcommand{\F}[0]{\mathbb{F}} \newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\PP}[0]{\mathbb{P}} \newcommand{\AP}[0]{\mathbb{A}} \newcommand{\G}[0]{\mathbb{G}}
+
+\newcommand{\ideal}[0]{\triangleleft}
+\newcommand{\primeideal}[0]{\triangleleft _{prime}}
+\newcommand{\maxideal}[0]{\triangleleft _{max}}
+\newcommand{\m}[0]{\mathfrak m}
+\newcommand{\p}[0]{\mathfrak p}
+\newcommand{\tensor}[0]{\otimes}
+
+\newcommand{\quotient}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+
+\newcommand{\proven}[0]{\begin{flushright} \qed \end{flushright}}
+\newcommand{\problem}[2]{\begin{flushleft} {\bf #1)} {\it #2} \end{flushleft} \hline \vline}
+\newcommand{\dzbar}[0]{d\overline{z}}
+
+\begin{document}
+
+\framebox{{\em Theorem:} The Euler-Lagrange equations for the energy functional are $\tau (u) = 0$, where $\tau(u) = \tau (u) ^i \partial_{x^i}$ is given by }\newline
+
+{\em Proof:} In any local calculation, let's adopt coordinates $x^i$ with Latin indices for the domain $M$ and coordinates $y^i$ with Greek indices for the target $N$. Let $u_t: M \times [0,1] \rightarrow N$ be a geodesic variation of $u = u _0$, e.g., $u _t (x) = exp_{u (x)} (t \psi)$ where $\psi = \psi ^{\alpha} \partial _{y^\alpha}$ is a vector field along $u$. We compute:
+
+\begin{eqnarray*}
+\left. \frac{d}{dt} \right|_{t=0} E(u _t) & = & \displaystyle{\left. \frac{d}{dt} \right|_{t=0} \int _M \frac{1}{2} \|Du_t\|^2 dvol_M } = \displaystyle{\left.\frac{d}{dt} \right|_{t=0} \int _M \frac{1}{2}  \left\langle Du_t, Du_t \right\rangle dvol_M } \\
+& = & \displaystyle{\frac{1}{2}  \int _M \frac{d}{dt} \left. \left\langle \frac{\partial u_t^{\alpha}}{\partial x ^i} \partial _{y^\alpha}\otimes dx ^i _t  , \frac{\partial u_t^{\beta}}{\partial x ^j} \partial _{y^\beta}\otimes dx ^j _t\right\rangle \right|_{t=0} dvol_M } \\
+& = & \displaystyle{\int _M \left. \left\langle \nabla _{\partial _t} \left[ \partial _{u_t^{\alpha}}\otimes dx ^i _t \right], \partial _{u_t^{\beta}}\otimes dx ^j _t\right\rangle \right|_{t=0} dvol_M }\\
+& = & \displaystyle{\int _M \left. \left\langle \left[\nabla _{\partial _t} du ^i _t \right]\otimes \partial _{y^i} + du ^i _t \otimes \left[ \nabla_ {\partial_t} \partial _{y^i}\right] , du ^j _t \otimes \partial _{y^j} \right\rangle \right|_{t=0} dvol_M } \\
+& = & \displaystyle{\int _M  \left. \left\langle \cancel{\left[\nabla _{\partial _t} du ^i _t \right]}\otimes \partial _{y^i} + du ^i _t \otimes \left[ \nabla_ {\partial_t} \partial _{y^i}\right] , du ^j _t \otimes \partial _{y^j} \right\rangle \right|_{t=0} dvol_M } \\
+\end{eqnarray*}
+
+\proven
+\end{document}
+
+​

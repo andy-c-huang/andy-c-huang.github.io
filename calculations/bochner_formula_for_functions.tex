@@ -1,0 +1,86 @@
+%\documentclass[12pt]{article}
+\documentclass{article}
+
+\renewcommand{\baselinestretch}{1.3}
+
+\usepackage{tikz, amsmath, amsthm, amssymb, mathrsfs, fullpage, setspace, cancel}
+%\usetikzlibrary{matrix,arrows}
+
+\newcommand{\N}[0]{\mathbb{N}} \newcommand{\Z}[0]{\mathbb{Z}} \newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\R}[0]{\mathbb{R}} \newcommand{\F}[0]{\mathbb{F}} \newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\PP}[0]{\mathbb{P}} \newcommand{\AP}[0]{\mathbb{A}} \newcommand{\G}[0]{\mathbb{G}}
+
+\newcommand{\ideal}[0]{\triangleleft}
+\newcommand{\primeideal}[0]{\triangleleft _{prime}}
+\newcommand{\maxideal}[0]{\triangleleft _{max}}
+\newcommand{\m}[0]{\mathfrak m}
+\newcommand{\p}[0]{\mathfrak p}
+\newcommand{\tensor}[0]{\otimes}
+
+\newcommand{\quotient}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+
+\newcommand{\proven}[0]{\begin{flushright} \qed \end{flushright}}
+\newcommand{\problem}[2]{\begin{flushleft} {\bf #1)} {\it #2} \end{flushleft} \hline \vline}
+\newcommand{\dzbar}[0]{d\overline{z}}
+
+\begin{document}
+
+\framebox{{\em Theorem:} For $f\in C^1 (M, \R)$, we have $\frac{1}{2} \Delta \| \nabla f \| ^2 = \| Hess(f) \| ^2 + \left\langle \nabla f, \nabla(\Delta f) \right\rangle + Ric(grad(f),grad(f))$.}\newline
+
+
+
+{\em Proof:} Throughout, $\nabla$ will only be used to denote the covariant derivative, so that $grad (f) = (\nabla f)^\sharp$. Also, recall: $\sharp$ and $\flat$ are isomorphisms and isometries in the sense that $\left\langle X, Y \right\rangle = \left\langle X^\flat , Y^\flat \right\rangle$ and $\left\langle \omega, \eta \right\rangle = \left\langle \omega ^\sharp , \eta ^\sharp \right\rangle$; $\sharp$ and $\flat$ commute with $\nabla$, as $(\nabla ^{T^* M} \omega)^\sharp = \nabla ^{T M} (\omega^\sharp) $ and $(\nabla ^{TM} X)^\flat = \nabla ^{T^* M} (X^\flat) $; and $\sharp$ and $\flat$ allow us to express such quantities: $\left\langle X, Y \right\rangle = X^\flat (Y)$, $\left\langle \omega , \eta \right\rangle = \omega (\eta ^\flat)$, and $\omega (X) = \left\langle \omega ^\sharp , X\right\rangle _{TM}= \left\langle \omega , X ^\flat \right\rangle _{T^* M}$.
+
+So, this statement is equivalent to: $\frac{1}{2} \Delta \| (\nabla f)^\sharp \| ^2 = \| Hess(f) \| ^2 + \left\langle (\nabla f)^\sharp, (\nabla(\Delta f))^\sharp \right\rangle + Ric((\nabla f)^\sharp,(\nabla f)^\sharp)$. This is what we'll show instead. Furthermore, we seek to prove a tensor identity, so we can fix a point $p\in M$ and utilize geodesic normal coordinates $\{ \partial _i\}$ on $M$ such that $\left\langle \partial _i, \partial _j \right\rangle = \delta_{ij}$ and $\nabla _{\partial _i} \partial_j |_p = 0$. We exploit the symmetry of $Hess(f)$ twice in this calculation.
+\begin{eqnarray*}
+\frac{1}{2} \Delta \| (\nabla f) ^\sharp \| & = & \frac{1}{2} \displaystyle{\sum_i} \nabla _{\partial_i} \nabla _{\partial_i} \left\langle (\nabla f)^\sharp , (\nabla f)^\sharp \right\rangle
+ = \displaystyle{\sum_i} \nabla _{\partial_i} \left\langle  \nabla _{\partial_i} (\nabla f)^\sharp , (\nabla f)^\sharp \right\rangle \\
+ & = & \displaystyle{\sum_i} \nabla _{\partial_i} \left[ \left[ \nabla _{\partial_i} (\nabla f)^\sharp \right]^\flat \left( (\nabla f)^\sharp \right) \right]
+ = \displaystyle{\sum_i} \nabla _{\partial_i} \left[ \left[ \nabla _{\partial_i} (\nabla f)\right] \left( (\nabla f)^\sharp \right) \right]  \\
+ & = & \displaystyle{\sum_i} \nabla _{\partial_i} \left[ \left[ Hess(f) \right] \left( \partial_i , (\nabla f)^\sharp \right) \right]
+ = \displaystyle{\sum_i} \nabla _{\partial_i} \left[ \left[ Hess(f) \right] \left((\nabla f)^\sharp \right) \partial_i \right] \\
+ & = & \displaystyle{\sum_i} \nabla _{\partial_i} \left[ \left[ \nabla _{(\nabla f)^\sharp} (\nabla f)\right] \left(\partial_i \right) \right]
+ = \displaystyle{\sum_i} \nabla _{\partial_i} \left\langle \left[ \nabla _{(\nabla f)^\sharp} (\nabla f) \right] ^\sharp, \partial_i \right\rangle  \\
+ & = & \displaystyle{\sum_i} \nabla _{\partial_i} \left\langle \nabla _{(\nabla f)^\sharp} \left[  (\nabla f) ^\sharp \right] , \partial_i \right\rangle  \\
+ & = & \displaystyle{\sum_i} \left\langle \nabla _{\partial_i} \nabla _{(\nabla f)^\sharp} \left[  (\nabla f) ^\sharp \right] , \partial_i \right\rangle  + \displaystyle{\sum_i} \left\langle \nabla _{(\nabla f)^\sharp} \left[  (\nabla f) ^\sharp \right] , \cancelto{0}{\nabla _{\partial_i} \partial_i } \right\rangle  \\
+ & = & \displaystyle{\sum_i} \left\langle R( \partial_i , (\nabla f)^\sharp ) \left[  (\nabla f) ^\sharp \right] , \partial_i \right\rangle
+ + \displaystyle{\sum_i} \left\langle \nabla _{(\nabla f)^\sharp} \nabla _{\partial_i} \left[  (\nabla f) ^\sharp \right] , \partial_i \right\rangle
+ + \displaystyle{\sum_i} \left\langle \nabla _{\left[ \partial_i , (\nabla f) ^\sharp \right]} \left[  (\nabla f) ^\sharp \right] , \partial_i \right\rangle
+\end{eqnarray*}
+Each of these three summands can be computed as follows:
+\begin{eqnarray*}
+\displaystyle{\sum_i} \left\langle R( \partial_i , (\nabla f)^\sharp ) \left[  (\nabla f) ^\sharp \right] , \partial_i \right\rangle & = & Ric \left( (\nabla f)^\sharp, (\nabla f)^\sharp \right) \mbox{ by definition of the Ricci tensor.}
+\end{eqnarray*}
+\begin{eqnarray*}
+\displaystyle{\sum_i} \left\langle \nabla _{(\nabla f)^\sharp} \nabla _{\partial_i} \left[  (\nabla f) ^\sharp \right] , \partial_i \right\rangle &
+ = & \displaystyle{\sum_i} \nabla _{(\nabla f)^\sharp}  \left\langle \nabla _{\partial_i} \left[  (\nabla f) ^\sharp \right] , \partial_i \right\rangle
+ - \displaystyle{\sum_i} \left\langle  \nabla _{\partial_i} \left[  (\nabla f) ^\sharp \right] , \cancelto{0}{\nabla _{(\nabla f)^\sharp} \partial_i} \right\rangle \\
+ & = & \displaystyle{\sum_i} (\nabla f)^\sharp  \left\langle \nabla _{\partial_i} \left[  (\nabla f) ^\sharp \right] , \partial_i \right\rangle
+ = \displaystyle{\sum_i} (\nabla f)^\sharp  \left[ \left[ \nabla _{\partial_i}  \left((\nabla f) ^\sharp\right) ^\flat \right] \left( \partial_i \right) \right] \\
+ & = & \displaystyle{\sum_i} (\nabla f)^\sharp  \left[ \left[ \nabla _{\partial_i}  (\nabla f)  \right] \left( \partial_i \right) \right]
+ = \nabla f)^\sharp \left[ \displaystyle{\sum_i}  \left[ \left[ \nabla _{\partial_i}  (\nabla f)  \right] \left( \partial_i \right) \right] \right]\\
+ & = & (\nabla f)^\sharp (\Delta f) = \left[ \nabla (\Delta f ) \right] \left( (\nabla f )^\sharp \right) \\
+ & = & \left\langle \left( \nabla (\Delta f) \right)^\sharp , (\nabla f)^\sharp \right\rangle
+\end{eqnarray*}
+\begin{eqnarray*}
+\displaystyle{\sum_i} \left\langle \nabla _{\left[ \partial_i , (\nabla f) ^\sharp \right]} \left[  (\nabla f) ^\sharp \right] , \partial_i \right\rangle &
+ = & \displaystyle{\sum_i} \left[ \nabla _{\left[ \partial_i , (\nabla f) ^\sharp \right]} \left[  (\nabla f) ^\sharp \right]\right]^\flat \left( \partial_i \right)
+ = \displaystyle{\sum_i} \left[ \nabla _{\left[ \partial_i , (\nabla f) ^\sharp \right]} (\nabla f) \right] \left( \partial_i \right) \\
+ & = & \displaystyle{\sum_i} \left[ Hess(f) \right] \left( \left[\partial_i , (\nabla f)^\sharp \right], \partial_i \right) \\
+ & = & \displaystyle{\sum_i} \left[ Hess(f) \right] \left( \nabla_{\partial_i} \left[ (\nabla f)^\sharp \right] - \cancelto{0}{\nabla_{(\nabla f)^\sharp} \partial_i} , \partial_i \right) \\
+ & = & \displaystyle{\sum_i} \left[ Hess(f) \right] \left(\partial_i ,  \nabla_{\partial_i} \left[ (\nabla f)^\sharp \right]\right)
+ = \displaystyle{\sum_i} \left[ \nabla _{\partial_i} (\nabla f) \right] \left( \nabla_{\partial_i} \left[ (\nabla f)^\sharp \right] \right)\\
+ & = & \displaystyle{\sum_i} \left\langle \nabla _{\partial_i} (\nabla f), \left( \nabla_{\partial_i} \left[ (\nabla f)^\sharp \right] \right)^\flat \right\rangle
+ = \displaystyle{\sum_i} \left\langle \nabla _{\partial_i} (\nabla f),\nabla _{\partial_i} (\nabla f) \right\rangle \\
+ & = & \displaystyle{\sum_i} \frac{1}{\left\langle dx^i, dx^i \right\rangle} \left\langle dx^i \otimes \nabla _{\partial_i} (\nabla f),dx^i \otimes  \nabla _{\partial_i} (\nabla f) \right\rangle \\
+ & = & \displaystyle{\sum_i} \left\langle dx^i \otimes \nabla _{\partial_i} (\nabla f),dx^i \otimes  \nabla _{\partial_i} (\nabla f) \right\rangle \\
+ & = & \displaystyle{\sum_{i,j}} \left\langle dx^i \otimes \nabla _{\partial_i} (\nabla f),dx^j \otimes  \nabla _{\partial_j} (\nabla f) \right\rangle \mbox{ by orthogonality of $\{ dx^i\}$ }\\
+ & = & \displaystyle{\sum_{j}} \left\langle \displaystyle{\sum_{i}} \left( dx^i \otimes \nabla _{\partial_i} (\nabla f) \right),dx^j \otimes  \nabla _{\partial_j} (\nabla f) \right\rangle\\
+ & = & \left\langle \displaystyle{\nabla ^2 f ,\displaystyle{\sum_{j}} \left(dx^j \otimes \nabla _{\partial_j} (\nabla f)\right)} \right\rangle \\
+& = & \left\langle \nabla ^2 f, \nabla ^2 f \right\rangle = \| Hess(f) \| ^2
+\end{eqnarray*}
+Summing these three quantities yields the desired result.
+\proven
+\end{document}
+
+​

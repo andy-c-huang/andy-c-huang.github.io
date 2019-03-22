@@ -1,3 +1,11 @@
 
 resume/andy-resume.synctex
 resume/andy-resume.log
+*.bbl
+*.log
+*.synctex
+*.aux
+*.bak
+*.blg
+*.sav
+*.dvi
