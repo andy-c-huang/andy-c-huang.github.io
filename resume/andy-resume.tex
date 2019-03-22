@@ -1,0 +1,209 @@
+\documentclass[margin,line]{res}
+\usepackage{mathpazo, verbatim, hyperref}
+
+%\setlength{\paperwidth}{8.5in}
+%\setlength{\paperheight}{11in}
+
+\topmargin=-0.3in
+\oddsidemargin -.5in
+\evensidemargin -.5in
+\textwidth=6.2in
+\textheight=9.5in
+%\itemsep=0in
+%\parsep=0in
+% if using pdflatex:
+\setlength{\pdfpagewidth}{8.5in}%\paperwidth}
+\setlength{\pdfpageheight}{11in}%\paperheight}
+
+\newenvironment{list1}{
+  \begin{list}{\ding{113}}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
+      \setlength{\leftmargin}{0.17in}}}{\end{list}}
+\newenvironment{list2}{
+  \begin{list}{$\bullet$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
+      \setlength{\leftmargin}{0.2in}}}{\end{list}}
+
+
+\begin{document}
+\moveleft.5\hoffset\centerline{\large\bf Andy C. Huang}
+%\moveleft\hoffset\vbox{\hrule width 7.5in height 1pt}\smallskip
+\moveleft.5\hoffset\centerline{{\it e-mail:}  andy.c.huang@outlook.com}
+%\moveleft.5\hoffset\centerline{{\it webpage:} \url{http://math.rice.edu/~ach3}}
+\moveleft.5\hoffset\centerline{{\it GitHub:} \url{https://github.com/andy-c-huang}}
+\moveleft.5\hoffset\centerline{{\it cellphone:}  (408) 887 - 9651}
+\vspace*{.1in}
+
+\begin{resume}
+
+%\section{\sc Objective} I am seeking a position in research and development allowing me to use the rigorous analytical skills I've developed from my doctoral training in mathematics. I thrive in an environment requiring collaboration with engineers from other areas,
+
+\vspace*{-6pt}
+
+\section{\sc Education and Honors}
+{\bf Rice University}, Houston, TX \hfill
+%\vspace*{-.1in}
+\begin{list1}
+\item[] Ph.D. in Mathematics (Advisor: Dr. Mike Wolf, GPA 3.96) \hfill May 2016
+\item[] \hskip .2in {\em Dissertation Title:} "Handle crushing harmonic maps between surfaces"
+\vskip -6pt
+\item[] M.A. in Mathematics (GPA: 4.04) \hfill May 2012
+\end{list1}
+\vskip -12pt
+{\bf University of California, Davis}, Davis, CA
+\begin{list1}
+\item[] B.S. in Mathematics with Departmental Citation (Major GPA: 3.85) \hfill May 2010
+\end{list1}
+\vskip -12pt
+{\bf Budapest Semesters in Mathematics}, Budapest, Hungary \hfill Dec 2009
+
+\section{\sc Computer skills}
+{\em Programming languages:} C++, C, Python \\
+{\em Software:} Trilinos, Git, MATLAB, Mathematica, CUBIT, ParaView, \LaTeX, OpenCV, scikit-learn
+
+\section{\sc Professional Experience}
+{\bf Sandia National Laboratories}, Albuquerque, NM \hfill {\bf Jan 2019 - present}\\
+{\em Senior Member of the Technical Staff, Computer Science}\\
+Code developer for two MPI-parallel and GPU supported C++ physics simulation codes, for semiconductor physics and electromagnetcs. Main work and research focus on numerical formulations, solver acceleration and stability, and physics implementation. On-going work include:
+\begin{itemize}
+\setlength\itemsep{0pt}
+\item[-] Acceleration of frequency-domain analysis in semiconductor physics simulation code, \newline Charon (project homepage: \url{https://charon.sandia.gov}).
+\item[-] Multi-physics coupling of some of Sandia's simulation codes, including Xyce.
+\item[-] Electromagnetics simulation code solver acceleration for high-performance computing platforms.
+\end{itemize}
+
+{\bf Sandia National Laboratories}, Albuquerque, NM \hfill {\bf Jul 2016 - Jan 2019}\\
+{\em Postdoctoral appointment (within Sandia's semiconductor device modelling team)}\\
+Designed and implemented (in C++) a frequency-domain analysis method in Sandia's semiconductor device physics simulation code, Charon. Required extensive communication and cooperation with other developers to minimize disruption while extending code capability.
+
+{\bf Sandia National Laboratories}, Albuquerque, NM \hfill {\bf May 2015 - Jun 2016}\\
+{\em Graduate student intern, mentor: Xujiao (Suzey) Gao}\\
+Compared and analyzed numerical stabilization schemes for finite element and control volume methods for the simulation of coupled transient drift-diffusion equations modelling semiconductor physics. Implemented these stabilization schemes in Sandia's TCAD program, Charon (in C++).
+
+\section{\sc Research and Projects}
+
+{\bf Modeling of harmonic maps between surfaces \hfill Mar 2012 - Jun 2016}\\
+Implementation of finite element methods in Matlab, and porting to Python with C libraries for optimization. Analyzed a transient semi-linear elliptic PDE. Obtained for examples considered in thesis.
+\vskip -5pt
+{\bf Developed a Windows 8.1 phone app: ``KnowYoNotes" \hfill Feb 01, 2015}\\
+\emph{GitHub repo avilable at: }\url{https://github.com/andy-c-huang/KnowYoNotes}\\
+Developed the interface for a sheet music reading learning app. Written in C\#, involving event driven programming. Further development ongoing. Created for Rice's 2015 24 hour hackathon, HackRice.
+\vskip -5pt
+{\bf Travelling wave phenomena: Wave reflection in excitable media \hfill Sept 2008 - Jun 2009} \newline
+%{\em (in collaboration w/ Prof. Timothy Lewis (UC Davis), funded by the McNair Scholars program and the NSF)} \newline
+Investigated wave reflection phenomena in modified, coupled Fitzhugh-Nagumo equations. Explored existence and stability of anti-phase behavior in periodic solutions - interpreted biologically as a cause for cardiac arrhythmia. McNair Scholars Program funded. Advisor: Dr. Timothy Lewis (UC Davis).
+\vskip -5pt
+{\bf Spread of Avian Influenza Across Heterogeneous Farmscapes \hfill Sept 2007 - Sept 2008} \\
+%{\em (as an undergraduate cohort member of the 2007, UC Davis and NSF funded interdisciplinary Collaborative Learning at the Interface of Math and Biology group)} \\
+Modeled spread of the H5N1 virus on farm networks of varying spatial heterogeneity using coupled, stochastic compartment models. Analyzed effect of heterogeneity on potential for a large outbreak. Presented to panel of poultry industry leaders, including Foster's Farms. UC Davis and NSF funded.
+
+\section{\sc Grants and Awards}
+\begin{enumerate}
+  
+\item SIAM Science Policy Fellowship \hfill {\bf Jan 2019 - Dec 2020}
+\item GEAR Graduate Internship award \hfill {\bf Mar 2016} \\
+to work with Dr. Domingo Toledo at the University of Utah in Salt Lake City, Utah
+\item GEAR short-term visit award \hfill {\bf Jun 2015} \\
+to work with Dr. Bill Goldman at the Mathematical Sciences Research Institute in Berkeley, CA
+\item National Association of Math Circles Exchange grant \hfill {\bf 2014}
+\item National Association of Math Circles Seed grant \hfill {\bf 2013}
+\end{enumerate}
+
+\section{\sc Publications and Presentations}
+\begin{enumerate}
+\item \emph{An Isofrequency Remapping Scheme for Harmonic Balance Methods} \hfill{\bf Feb. 26, 2019}\\
+      SIAM Conf. on Computational Science and Engineering in Spokane, WA
+\item \emph{Analytic band-to-trap tunneling model including band offset for heterojunction devices}\\
+      Xujiao Gao, Bert Kerr, and Andy Huang\\
+      In: Journal of Applied Physics 125, 054503 (2019)\\
+      \url{https://doi.org/10.1063/1.5078685}
+\item \emph{Non-degenerate harmonic balance via isofrequency remapping}\\
+      (in preparation)
+\item \emph{Developing a harmonic balance method for Charon}  \hfill {\bf Oct. 24, 2018}\\
+      Trilinos Users Group meeting in Albuquerque, NM
+\item \emph{A versatile harmonic balance method in a parallel framework} \hfill {\bf Sept 25, 2018}\\
+      A. Huang, X. Gao, R. Pawlowski, J. Gates, L. Musson, G. Hennigan, M. Negoita\\
+      International Conference on Simulation of Semiconductor Processing and Devices (SISPAD)\\
+      \url{http://dx.doi.org/10.1109/SISPAD.2018.8551620}
+\item \emph{A harmonic balance method for PDEs} (SAND2016-12293)
+\item \emph{Development of harmonic balance capability for Charon} (SAND2018-3623)
+\item {\em Efficient band-to-trap tunneling model including heterojuntion band offset}\\
+      Xujiao Gao, Andy Huang, and Bert Kerr\\
+      In: ECS Transactions, vol. 80, pp. 1005–1015, 2017.
+\item {\em Harmonic maps of punctured surfaces to the hyperbolic plane} \\%\hfill {\bf May 25, 2016} \\
+      In: {\em Communications in Analysis and Geometry} (to appear) \\
+      Preprint available at \url{http://arxiv.org/abs/1605.07715}
+\item {\em Using geometric maximum principles to harmonically crush handles} \hfill {\bf Sep 10, 2016} \\
+      GEAR Workshop: Analytic Aspects of Higher Teichm\"uller Theory at Rutgers University, Newark
+\item {\em Handle crushing harmonic maps between surfaces} \hfill {\bf Mar 30, 2016} \\
+      Max Dehn Seminar at the University of Utah, Math Department
+\item {\em On harmonic maps between non-compact surfaces of different genera} \hfill {\bf Nov 15, 2015} \\
+      AMS Special Session (at Rutgers Univ.): Aspects of Minimal Surfaces in Riemannian Manifolds
+\item {\em Implementation of different stabilization schemes in Charon using Trilinos/Panzer} \hfill{ \bf Oct. 27, 2015} \\
+      X. Gao, A. Huang, K. Peterson, G. Hennigan, L. Musson, and P. Bochev \\
+      Presented by X. Gao at the Trilinos User Group meeting Albuquerque, NM
+\end{enumerate}
+
+\section{\sc Professional development}
+Enthought's Machine Learning Mastery Workshop (May 21-23 2018)\\
+Kokkos tutorial (Dec. 5, 2017)\\
+Enthought's Python for Scientists and Engineers (Sept. 11-15, 2017)\\
+Introduction to CUBIT (Nov. 15, 2016)\\
+ParaView (Aug. 3-5, 2016)
+
+\section{\sc Conferences}
+Trilinos User-Developer Group meeting in Albuquerque, NM (Oct 23-25, 2018)\\
+Intl. Conf. on Simulation of Semiconductor Processing and Devices in Austin, TX (Sept. 24-26, 2018)\\
+IEEE Intl. Symp. on Antennas and Propagation APS/USRI in Boston, MA (Jul 8-13, 2018)\\
+Trilinos User-Developer Group meeting in Albuquerque, NM (Oct. 23-25, 2017)\\
+SIAM Conference on Computational Science and Engineering in Atlanta, GA (Feb 27 - Mar 3, 2017)
+
+\section{\sc Leadership}
+{\bf Head Mechanic at Rice Bikes \hfill Jul 2013 - May 2016} \\
+Oversaw student-run bike shop mechanic training at Rice University. Organized bike builds for the rental bike fleet, using it as a training platform for team of 10. Coordinated monthly, themed bike rides for Rice students to safely tour areas of Houston. Re-structured mechanics operations for efficiency.
+\vskip -5pt
+{\bf Rice Math Circle co-organizer \hfill Aug 2012 - May 2014}\\
+%Graduate student operated math circle for middle- and high-school aged students.
+Coordinated and designed 3-hour, bi-weekly sessions run by graduate students exploring math topics through problems, puzzles, and games. Middle- and high-school student audience. Topics included: graph theory, discrete probability, combinatorics, game theory, minimal surfaces, programming.
+\vskip -5pt
+{\bf Instructor (at Rice University)} \\
+Ordinary Differential Equations (Math 211), Calculus II (Math 102) \hfill {\bf Spring 2013, Summer 2012}
+\vskip -5pt
+{\bf Teaching Assistant \hfill Sept 2010 - May 2016}\\
+Conducted office hours, led weekly discussions, and graded homework. {\em Courses:} Single and multi-variable calculus, Ordinary and partial differential equations, Riemannian geometry, Real Analysis
+
+\section{\sc Service and Outreach}
+{\bf Math Counts volunteer \hfill Feb 10, 2018}\\
+scored exams from Math COUNTS competition at Albuquerque Academy
+\vskip -5pt
+{\bf Community Involvement brainstorm \hfill Dec 12, 2016}\\
+Participated in a discussion lead by Tineca Quintana (org 3652)
+\vskip -5pt
+{\bf ``Changing the Equation" Career Spotlight interview \hfill Dec 6, 2016}\\
+used in Explora math kits designed for after school activities, put together by Amy Tapia (org 3652)
+\vskip -5pt
+{\bf Mars Bus Experience volunteer \hfill Oct 27, 2016}\\
+at Van Buren Middle School, organized by Tineca Quintana (org 3652)
+\vskip -5pt
+{\bf Invited presenter: ``How to be efficient (in some sense)" \hfill Mar 14, 2015} \\
+as part of a Pi Day celebration at NASA's Space Center Houston
+\vskip -5pt
+{\bf Minimal surfaces and soap films demonstration \hfill Nov 4, 2012} \\
+as part of the Weiss School of Natural Sciences alumni open house at Rice University
+
+\begin{comment}
+\section{\sc Hobbies and Interests}
+Bicycling, rock climbing, racquetball, Arduino hacks
+\end{comment}
+
+
+\end{resume}
+\end{document}
+
+
+
+
